@@ -11,7 +11,7 @@ You can read more [here](https://vulkan-tutorial.com/Development_environment#pag
 - Then run ```sudo pacman -S glfw``` to install GLFW.
 - Run ```sudo pacman -S glm``` to install GLM.
 - Run ```sudo pacman -S sharderc``` and ```glslc``` for it to give you an error. :)
-
+- Run ```sudo pacman -S libxi libxxf86vm``` if its not installed on your machine.
 Congrats everything has been downloaded.
 
 ## Setting Up
