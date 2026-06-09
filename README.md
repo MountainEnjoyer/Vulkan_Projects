@@ -5,8 +5,8 @@ Vulkan does not include a library for linear algebra operations. GLM is designed
 
 ## Installation
 
-Run ```sudo pacman -S vulkan-devel``` to install the vulkan dev-tools and ```vkcube``` to verify the installation. should render a cube.
-Then run ```sudo pacman -S glfw``` to install GLFW.
-Run ```sudo pacman -S glm``` to install GLM.
+Run ```sudo pacman -S vulkan-devel``` to install the vulkan dev-tools and ```vkcube``` to verify the installation. should render a cube.\n
+Then run ```sudo pacman -S glfw``` to install GLFW.\n
+Run ```sudo pacman -S glm``` to install GLM.\n
 
 
