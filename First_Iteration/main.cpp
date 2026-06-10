@@ -1,4 +1,4 @@
-#include "fist_app.hpp"
+#include "first_app.hpp"
 
 // std
 #include <cstdlib>
@@ -11,7 +11,7 @@ int main () {
   try {
     app.run();
   } catch (const std::exception &e) {
-    stf::cerr << e.what() << '\n';
+    std::cerr << e.what() << '\n';
     return EXIT_FAILURE;
   }
   return EXIT_SUCCESS;

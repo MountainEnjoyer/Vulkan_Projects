@@ -9,9 +9,9 @@ namespace env {
       static constexpr int WIDTH = 800;
       static constexpr int HEIGHT = 600;
 
-      void run() {};
+      void run();
 
     private:
-      envWindow envWindow{WIDTH, HEIGHT, "Hello Vulkan !"};
-  }
+      vulkanWindow VulkanWindow{WIDTH, HEIGHT, "Hello Vulkan !"};
+  };
 }

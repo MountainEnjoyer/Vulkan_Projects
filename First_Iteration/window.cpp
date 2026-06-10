@@ -4,16 +4,16 @@
 
 namespace env {
   // the constructor :
-  envWindow::envWindow(int w, int h, std::string name) : width{w}, height{h}, windowName{name} {
+  vulkanWindow::vulkanWindow(int w, int h, std::string name) : width{w}, height{h}, windowName{name} {
     initWindow();
   }
 
-  envWindow::~envWindow() {
+  vulkanWindow::~vulkanWindow() {
     glfwDestroyWindow(window);
     glfwTerminate();
   }
 
-  void envWindow::initWindow() {
+  void vulkanWindow::initWindow() {
     //init the GLFW lib
     glfwInit();
     glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);

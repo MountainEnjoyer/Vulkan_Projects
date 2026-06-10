@@ -12,9 +12,9 @@ namespace env {
   class vulkanWindow {
     public:
       // to display the window
-      envWindow(int w, int h, std::string name);
+      vulkanWindow(int w, int h, std::string name);
       // to remove the window
-      ~envWindow();
+      ~vulkanWindow();
     private:
       // func to init the window
       void initWindow();
@@ -25,6 +25,6 @@ namespace env {
 
       // window's name
       std::string windowName;
-      GLFW *window;
+      GLFWwindow *window;
   };
 }
