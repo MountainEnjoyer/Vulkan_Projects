@@ -1,3 +1,4 @@
+
 #include "first_app.hpp"
 
 // std
@@ -5,8 +6,8 @@
 #include <iostream>
 #include <stdexcept>
 
-int main () {
-  env::FirstApp app{};
+int main() {
+  lve::FirstApp app{};
 
   try {
     app.run();
@@ -14,5 +15,6 @@ int main () {
     std::cerr << e.what() << '\n';
     return EXIT_FAILURE;
   }
+
   return EXIT_SUCCESS;
 }

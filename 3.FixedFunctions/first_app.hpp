@@ -1,21 +1,24 @@
-#define once
+#pragma once
 
-#include "window.hpp"
-#include "pipeline.hpp"
-#include "env_device.hpp"
+#include "lve_pipeline.hpp"
+#include "lve_window.hpp"
 
-namespace env { 
-  class FirstApp {
+namespace lve {
+class FirstApp {
+ public:
+  static constexpr int WIDTH = 800;
+  static constexpr int HEIGHT = 600;
 
-    public:
-      static constexpr int WIDTH = 800;
-      static constexpr int HEIGHT = 600;
+  void run();
 
-      void run();
-
-    private:
-      vulkanWindow VulkanWindow{WIDTH, HEIGHT, "Hello Vulkan !"};
-      EnvDevice envDevice{VulkanWindow};
-      pipeline Pipeline{"shaders/simple_shader.vert.spv", "shaders/simple_shader.frag.spv", pipeline::defaultPipelineConfigInfo(WIDTH, HEIGHT)};
-  };
-}
+ private:
+  LveWindow lveWindow{WIDTH, HEIGHT, "Hello Vulkan!"};
+  LveDevice lveDevice{lveWindow};
+  VkPipelineLayout pipelineLayout;
+  LvePipeline lvePipeline{
+      lveDevice,
+      "shaders/simple_shader.vert.spv",
+      "shaders/simple_shader.frag.spv",
+      LvePipeline::defaultPipelineConfigInfo(WIDTH, HEIGHT)};
+};
+}  // namespace lve
