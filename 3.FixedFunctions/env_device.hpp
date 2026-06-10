@@ -6,7 +6,7 @@
 #include <string>
 #include <vector>
 
-namespace lve {
+namespace env {
 
 struct SwapChainSupportDetails {
   VkSurfaceCapabilitiesKHR capabilities;
@@ -30,7 +30,7 @@ class envDevice {
   const bool enableValidationLayers = true;
 #endif
 
-  envDevice(envWindow &window);
+  envDevice(vulkanWindow &window);
   ~envDevice();
 
   // Not copyable or movable
@@ -93,7 +93,7 @@ class envDevice {
   VkInstance instance;
   VkDebugUtilsMessengerEXT debugMessenger;
   VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
-  envWindow &window;
+  vulkanWindow &window;
   VkCommandPool commandPool;
 
   VkDevice device_;
@@ -105,4 +105,4 @@ class envDevice {
   const std::vector<const char *> deviceExtensions = {VK_KHR_SWAPCHAIN_EXTENSION_NAME};
 };
 
-}  // namespace lve
+}  // namespace env

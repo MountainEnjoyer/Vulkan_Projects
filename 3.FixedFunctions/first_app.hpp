@@ -2,6 +2,7 @@
 
 #include "window.hpp"
 #include "pipeline.hpp"
+#include "env_device.hpp"
 
 namespace env { 
   class FirstApp {
@@ -14,6 +15,7 @@ namespace env {
 
     private:
       vulkanWindow VulkanWindow{WIDTH, HEIGHT, "Hello Vulkan !"};
-      pipeline Pipeline{"shaders/simple_shader.vert.spv", "shaders/simple_shader.frag.spv"};
+      EnvDevice envDevice{VulkanWindow};
+      pipeline Pipeline{"shaders/simple_shader.vert.spv", "shaders/simple_shader.frag.spv", pipeline::defaultPipelineConfigInfo(WIDTH, HEIGHT)};
   };
 }

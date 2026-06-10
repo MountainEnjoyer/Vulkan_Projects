@@ -1,4 +1,4 @@
-#include "my_engine_device.hpp"
+#include "env_device.hpp"
 
 // std headers
 #include <cstring>
@@ -6,7 +6,7 @@
 #include <set>
 #include <unordered_set>
 
-namespace lve {
+namespace env {
 
 // local callback functions
 static VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(
@@ -47,7 +47,7 @@ void DestroyDebugUtilsMessengerEXT(
 }
 
 // class member functions
-envDevice::envDevice(envWindow &window) : window{window} {
+envDevice::envDevice(vulkanWindow &window) : window{window} {
   createInstance();
   setupDebugMessenger();
   createSurface();
@@ -531,4 +531,4 @@ void envDevice::createImageWithInfo(
   }
 }
 
-}  // namespace lve
+}  // namespace env

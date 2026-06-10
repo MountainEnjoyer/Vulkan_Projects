@@ -1,6 +1,7 @@
 // for methods implementation
 
 #include "window.hpp"
+#include <stdexcept>
 
 namespace env {
   // the constructor :
@@ -20,5 +21,11 @@ namespace env {
     glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
     window = glfwCreateWindow(width, height, windowName.c_str(), nullptr, nullptr);
+  }
+
+  void vulkanWindow::createWindowSurface(VkInstance instance, VkSurfaceKHR *surface) {
+    if (glfwCreateWindowSurface(instance, window, nullptr, surface) != VK_SUCCESS) {
+      throw std::runtime_error("failed to create window surface");
+    };
   }
 }
