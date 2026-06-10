@@ -15,4 +15,7 @@ You can read more [here](https://vulkan-tutorial.com/Development_environment#pag
 Congrats everything has been downloaded.
 
 ## Setting Up
+Create a Makefile to compile the code. Everything has been commented to understand what each line mean.
+Type ```make test``` to compile and run the output file.
+I should create a new empty window (doesn't show if you're using wayland since it's empty).
 
