@@ -1,6 +1,6 @@
-#pragma once
+#define once
 
-#include "my_engine_window.hpp"
+#include "window.hpp"
 
 // std lib headers
 #include <string>
@@ -22,7 +22,7 @@ struct QueueFamilyIndices {
   bool isComplete() { return graphicsFamilyHasValue && presentFamilyHasValue; }
 };
 
-class MyEngineDevice {
+class envDevice {
  public:
 #ifdef NDEBUG
   const bool enableValidationLayers = false;
@@ -30,14 +30,14 @@ class MyEngineDevice {
   const bool enableValidationLayers = true;
 #endif
 
-  MyEngineDevice(MyEngineWindow &window);
-  ~MyEngineDevice();
+  envDevice(envWindow &window);
+  ~envDevice();
 
   // Not copyable or movable
-  MyEngineDevice(const MyEngineDevice &) = delete;
-  void operator=(const MyEngineDevice &) = delete;
-  MyEngineDevice(MyEngineDevice &&) = delete;
-  MyEngineDevice &operator=(MyEngineDevice &&) = delete;
+  envDevice(const envDevice &) = delete;
+  void operator=(const envDevice &) = delete;
+  envDevice(envDevice &&) = delete;
+  envDevice &operator=(envDevice &&) = delete;
 
   VkCommandPool getCommandPool() { return commandPool; }
   VkDevice device() { return device_; }
@@ -93,7 +93,7 @@ class MyEngineDevice {
   VkInstance instance;
   VkDebugUtilsMessengerEXT debugMessenger;
   VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
-  MyEngineWindow &window;
+  envWindow &window;
   VkCommandPool commandPool;
 
   VkDevice device_;
