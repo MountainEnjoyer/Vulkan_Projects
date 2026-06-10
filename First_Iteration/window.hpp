@@ -15,6 +15,11 @@ namespace env {
       vulkanWindow(int w, int h, std::string name);
       // to remove the window
       ~vulkanWindow();
+
+      vulkanWindow(const vulkanWindow &) = delete;
+      vulkanWindow &operator=(const vulkanWindow &) = delete;
+
+      bool shouldClose() { return glfwWindowShouldClose(window); }
     private:
       // func to init the window
       void initWindow();
